@@ -11,6 +11,7 @@ describe('Rejestracja Wfirmy', function () {
         var Zip = '51-166'
         var City = 'Wrocław'
 
+
         cy.visit(Site)
         cy.get('a.btn.btn-primary.btn-arrow').should('contain','darmo')
         cy.get('a.btn.btn-colored.btn-register').click()

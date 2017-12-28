@@ -3,6 +3,7 @@ describe('Dokumenty sprzedaży', function () {
         //dane testowe
         var Site = 'https://beta.wfirma.pl' //adres testów
         var Login = 'bartek.lazarowicz+22@wfirma.pl' //login do konta
+
         var Password = '123123qwe' //hasło do konta
         var CompanyID = '4414' //ID firmy
         var InvoiceContentCount = '5' //ilość pozycji na fakturze
