@@ -23,7 +23,8 @@ describe('Dokumenty sprzedaży', function () {
         //przejdz do Przychody
         cy.visit( Site + '/invoices/index/all')
         // klik w Wystaw
-        cy.get('span.menu-label:first').click()
+        cy.get('span.menu-label:first')
+            .click()
         //uzupełnianie danych kontrahenta
         cy.get(DataInput + '[ContractorDetail][name]"]')
             .type('kontrahent' + RandomNumbContractor)
@@ -44,7 +45,8 @@ describe('Dokumenty sprzedaży', function () {
             .get('label div.input-append.input-prepend.inputer.input-select:first')
             .click()
             .get('span')
-            .contains('Inny').click()
+            .contains('Inny')
+            .click()
             .get(DataInput + '[ContractorDetail][nip]"]')
             .type(RandomNumbContractor)
             .get(DataInput + '[ContractorDetail][nip]"]')
