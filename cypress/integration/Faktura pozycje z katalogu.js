@@ -27,7 +27,8 @@ describe('Dokumenty sprzedaży', function () {
         //uzupełnianie danych kontrahenta
         cy.get('input[name="data[ContractorDetail][name]"]')
             .type('kontrahent' + RandomNumbContractor)
-            .get('label').contains('Nabywca')
+            .get('label')
+            .contains('Nabywca')
             .click()
             .get('input[name="data[ContractorDetail][zip]"]')
             .type(RandomNumbContractor) //.get('input[name="data[ContractorDetail][zip]"]').contains(RandomNumbContractor)
@@ -52,12 +53,15 @@ describe('Dokumenty sprzedaży', function () {
 
 
         //dodawanie produktu z kartoteki
-        cy.get('table[id="positions"] div.btn-group.group-right').click()
-            .get('a[href="/goods/search"]').click()
+        cy.get('table[id="positions"] div.btn-group.group-right')
+            .click()
+            .get('a[href="/goods/search"]')
+            .click()
             .get('tbody[id="tab-params"] tr.tab-data.checkable')
 
 
         //akceptacja formularza
-        cy.get('div.dialogbox-content form').submit()
+        cy.get('div.dialogbox-content form')
+            .submit()
     });
 });
