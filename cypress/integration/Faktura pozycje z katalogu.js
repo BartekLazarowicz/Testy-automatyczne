@@ -56,7 +56,6 @@ describe('Dokumenty sprzedaży', function () {
             .get('input[name="data[ContractorDetail][nip]"]')
                 .should('have.value','' + RandomNumbContractor)
 
-        /*
         //dodawanie produktu z kartoteki
         cy.get('table[id="positions"] div.btn-group.group-right')
             .click()
@@ -68,6 +67,5 @@ describe('Dokumenty sprzedaży', function () {
         //akceptacja formularza
         cy.get('div.dialogbox-content form')
             .submit()
-            */
     });
 });
