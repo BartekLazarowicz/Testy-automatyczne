@@ -1,12 +1,13 @@
 describe('Dokumenty sprzedaży', function () {
     it('Faktura', function () {
         //dane testowe
+
         var Site = 'https://beta.wfirma.pl' //adres testów
         var Login = 'bartek.lazarowicz+22@wfirma.pl' //login do konta
         var Password = '123123qwe' //hasło do konta
         var CompanyID = '4414' //ID firmy
         var InvoiceContentCount = '5' //ilość pozycji na fakturze
-        var RandomNumbContractor = (Math.floor(Math.random() * 1000001)) //liczby losowe
+        var RandomNumbContractor = (Math.floor(Math.random() * 1000001))+'' //liczby losowe
         var RandomZip = RandomNumbContractor.substr(0,2) + '-' + RandomNumbContractor.substr(2,3)
 
 
@@ -48,6 +49,12 @@ describe('Dokumenty sprzedaży', function () {
             .should('have.value', 'Ulica ' + RandomNumbContractor)
             .get('label div.input-append.input-prepend.inputer.input-select:first')
             .click()
+                .should('have.value','NIP')
+                .should('have.value','VAT UE')
+                .should('have.value','PESEL')
+                .should('have.value','REGON')
+                .should('have.value','Inny')
+                .should('have.value','Brak')
             .get('span')
             .contains('Inny')
             .click()
@@ -55,6 +62,10 @@ describe('Dokumenty sprzedaży', function () {
             .type(RandomNumbContractor)
             .get('input[name="data[ContractorDetail][nip]"]')
             .should('have.value','' + RandomNumbContractor)
+
+
+
+
 
         //dodawanie określonej ilości pozycji z produktami
         for (var PositionIndex=0; PositionIndex < InvoiceContentCount; ) {

@@ -36,7 +36,6 @@ describe('Dokumenty sprzedaży', function () {
             .type(RandomNumbContractor)
             .get('input[name="data[ContractorDetail][zip]"]')
                .should('have.value', RandomZip)
-
             .get('input[name="data[ContractorDetail][city]"]')
             .clear()
             .type('Miasto ' + RandomNumbContractor)
