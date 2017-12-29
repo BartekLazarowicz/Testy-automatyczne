@@ -7,6 +7,8 @@ describe('Dokumenty sprzedaży', function () {
         var CompanyID = '4414' //ID firmy
         var InvoiceContentCount = '5' //ilość pozycji na fakturze
         var RandomNumbContractor = (Math.floor(Math.random() * 1000001)) //liczby losowe
+        var RandomZip = RandomNumbContractor.substr(0,2) + '-' + RandomNumbContractor.substr(2,3)
+
 
         //wejdz na beta.wfirma.pl
         cy.visit( Site + '/users/login')
@@ -27,11 +29,14 @@ describe('Dokumenty sprzedaży', function () {
         //uzupełnianie danych kontrahenta
         cy.get('input[name="data[ContractorDetail][name]"]')
             .type('kontrahent' + RandomNumbContractor)
+            .should('have.value', 'kontrahent' + RandomNumbContractor)
             .get('label')
             .contains('Nabywca')
             .click()
             .get('input[name="data[ContractorDetail][zip]"]')
-            .type(RandomNumbContractor) //.get('input[name="data[ContractorDetail][zip]"]').contains(RandomNumbContractor)
+            .type(RandomNumbContractor)
+            .get('input[name="data[ContractorDetail][zip]"]')
+            .should('have.value', RandomZip)
             .get('input[name="data[ContractorDetail][city]"]')
             .clear()
             .type('Miasto ' + RandomNumbContractor)
@@ -50,6 +55,7 @@ describe('Dokumenty sprzedaży', function () {
             .type(RandomNumbContractor)
             .get('input[name="data[ContractorDetail][nip]"]')
             .should('have.value','' + RandomNumbContractor)
+
         //dodawanie określonej ilości pozycji z produktami
         for (var PositionIndex=0; PositionIndex < InvoiceContentCount; ) {
             var RandomNumb = (Math.floor(Math.random() * 10001)) //liczby losowe dla pozycji
