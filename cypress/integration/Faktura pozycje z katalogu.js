@@ -5,8 +5,9 @@ describe('Dokumenty sprzedaży', function () {
         var Login = 'bartek.lazarowicz+22@wfirma.pl' //login do konta
         var Password = '123123qwe' //hasło do konta
         var CompanyID = '4414' //ID firmy
-        var InvoiceContentCount = '5' //ilość pozycji na fakturze
-        var RandomNumbContractor = (Math.floor(Math.random() * 1000001)) //liczby losowe
+        //var InvoiceContentCount = '5' //ilość pozycji na fakturze
+        var RandomNumbContractor = (Math.floor(Math.random() * 1000001))+''//liczby losowe
+        var RandomZip = RandomNumbContractor.substr(0,2) + '-' + RandomNumbContractor.substr(2,3)
 
         //wejdz na beta.wfirma.pl
         cy.visit( Site + '/users/login')
@@ -27,11 +28,15 @@ describe('Dokumenty sprzedaży', function () {
         //uzupełnianie danych kontrahenta
         cy.get('input[name="data[ContractorDetail][name]"]')
             .type('kontrahent' + RandomNumbContractor)
+            .should('have.value', 'kontrahent' + RandomNumbContractor)
             .get('label')
             .contains('Nabywca')
             .click()
             .get('input[name="data[ContractorDetail][zip]"]')
-            .type(RandomNumbContractor) //.get('input[name="data[ContractorDetail][zip]"]').contains(RandomNumbContractor)
+            .type(RandomNumbContractor)
+            .get('input[name="data[ContractorDetail][zip]"]')
+               .should('have.value', RandomZip)
+
             .get('input[name="data[ContractorDetail][city]"]')
             .clear()
             .type('Miasto ' + RandomNumbContractor)
@@ -51,7 +56,7 @@ describe('Dokumenty sprzedaży', function () {
             .get('input[name="data[ContractorDetail][nip]"]')
                 .should('have.value','' + RandomNumbContractor)
 
-
+        /*
         //dodawanie produktu z kartoteki
         cy.get('table[id="positions"] div.btn-group.group-right')
             .click()
@@ -63,5 +68,6 @@ describe('Dokumenty sprzedaży', function () {
         //akceptacja formularza
         cy.get('div.dialogbox-content form')
             .submit()
+            */
     });
 });
