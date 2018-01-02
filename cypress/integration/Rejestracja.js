@@ -1,5 +1,5 @@
-describe('Rejestracja Wfirmy', function () {
-        it('Register_Steps', function () {
+describe('Rejestracja Wfirma', function () {
+        it('Rejestracja nowej firmy', function () {
             cy.visit(Site)
             cy.get('a.btn.btn-primary.btn-arrow').should('contain','darmo')
             cy.get('a.btn.btn-colored.btn-register')

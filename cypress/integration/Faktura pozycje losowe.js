@@ -1,5 +1,7 @@
-describe('Dokumenty sprzedaży', function () {
-    it('Faktura', function () {
+import {Logowanie} from './Logowanie';
+describe ('Dokumenty sprzedaży', function ()  {
+    it('Wystawianie Faktury', function () {
+        Logowanie();
         //przejdz do Przychody
         cy.visit( Site + '/invoices/index/all')
         // klik w Wystaw
