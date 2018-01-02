@@ -1,6 +1,5 @@
-describe('Rejestracja Wfirmy', function Register_function() {
+describe('Rejestracja Wfirmy', function () {
         it('Register_Steps', function () {
-
             cy.visit(Site)
             cy.get('a.btn.btn-primary.btn-arrow').should('contain','darmo')
             cy.get('a.btn.btn-colored.btn-register')
@@ -33,6 +32,5 @@ describe('Rejestracja Wfirmy', function Register_function() {
                 .click()
             cy.get('a.btn-submit')
                 .click()
-            cy.visit(Site+'/users/logout')
         });
 });
