@@ -1,15 +1,5 @@
 describe('Dokumenty sprzedaży', function () {
     it('Faktura', function () {
-        //dane testowe
-        var Site = 'https://beta.wfirma.pl' //adres testów
-        var Login = 'bartek.lazarowicz+22@wfirma.pl' //login do konta
-        var Password = '123123qwe' //hasło do konta
-        var CompanyID = '4414' //ID firmy
-        var InvoiceContentCount = '5' //ilość pozycji na fakturze
-        var RandomNumbContractor = (Math.floor(Math.random() * 1000001)) //liczby losowe
-        var RandomZip = RandomNumbContractor.substr(0,2) + '-' + RandomNumbContractor.substr(2,3)
-
-
         //wejdz na beta.wfirma.pl
         cy.visit( Site + '/users/login')
         //zaloguj sie
@@ -19,8 +9,6 @@ describe('Dokumenty sprzedaży', function () {
             .type(Password)
             .get('button.btn.btn-lg.btn-primary.btn-block.btn-submit')
             .click()
-        //wybierz firme
-        cy.visit( Site + '/user_companies/login/' + CompanyID)
         //przejdz do Przychody
         cy.visit( Site + '/invoices/index/all')
         // klik w Wystaw
@@ -43,6 +31,7 @@ describe('Dokumenty sprzedaży', function () {
             .get('input[name="data[ContractorDetail][city]"]')
             .should('have.value', 'Miasto ' + RandomNumbContractor)
             .get('input[name="data[ContractorDetail][street]"]')
+            .clear()
             .type('Ulica ' + RandomNumbContractor)
             .get('input[name="data[ContractorDetail][street]"]')
             .should('have.value', 'Ulica ' + RandomNumbContractor)

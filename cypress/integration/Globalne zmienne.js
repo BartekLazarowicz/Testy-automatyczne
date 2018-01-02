@@ -1,0 +1,13 @@
+global.Site = 'https://beta.wfirma.pl'
+global.Login = 'bartek.lazarowicz+'+Math.floor(Math.random() * 10001)+'@wfirma.pl'
+global.NIP = '9151677484'
+global.Password = '123123qwe'
+global.CompanyName = 'BUSINESS TAX Sp. z o. o.'
+global.Street = 'ul. Bolesława Krzywoustego'
+global.BuildingNumber = '105'
+global.FlatNumber = '21'
+global.Zip = '51-166'
+global.City = 'Wrocław'
+global.InvoiceContentCount = '5' //ilość pozycji na fakturze
+global.RandomNumbContractor = (Math.floor(Math.random() * 1000001))+'' //liczby losowe
+global.RandomZip = RandomNumbContractor.substr(0,2) + '-' + RandomNumbContractor.substr(2,3)
