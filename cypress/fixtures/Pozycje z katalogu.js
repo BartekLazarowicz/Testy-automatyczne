@@ -23,6 +23,7 @@ describe ('Sprzedaż', function ()  {
             .click()
             .get('a[href="/goods/search"]')
             .click()
+        cy.get()
 
     });
 });
