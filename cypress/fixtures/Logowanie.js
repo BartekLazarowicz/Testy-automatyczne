@@ -1,7 +1,7 @@
 export const Logowanie = function () {
 
 //wejdz na beta.wfirma.pl
-        cy.visit(Site + '/users/login')
+        cy.visit(Site + '/users/login');
 
 
 //zaloguj sie
@@ -10,6 +10,8 @@ export const Logowanie = function () {
             .get('input#UserPassword')
             .type(Password)
             .get('button.btn.btn-lg.btn-primary.btn-block.btn-submit')
+            .click()
+            .get('a[id="accept"]')
             .click()
 
 };

@@ -1,7 +1,7 @@
 export const Losowepozycje = function () {
 
-for (var PositionIndex=0; PositionIndex < InvoiceContentCount; ) {
-    var RandomNumb = (Math.floor(Math.random() * 10001)) //liczby losowe dla pozycji
+for (PositionIndex=0; PositionIndex < InvoiceContentCount; ) {
+    let RandomNumb = (Math.floor(Math.random() * 10001)); //liczby losowe dla pozycji
     //uzupełnianie danych produktu
     cy.get('input[name="data[InvoiceContent][' + PositionIndex + '][name]"]')
         .type(RandomNumb)
@@ -11,9 +11,9 @@ for (var PositionIndex=0; PositionIndex < InvoiceContentCount; ) {
         .type(RandomNumb)
         .get('label')
         .contains('Nabywca')
-        .click()
+        .click();
     //dodawanie nowej pozycji
     cy.get('a.btn.btn-mini.add-row')
-        .click()
+        .click();
     PositionIndex++;
 }};
