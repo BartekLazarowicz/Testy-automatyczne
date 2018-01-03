@@ -1,5 +1,5 @@
 //strona testowana
-global.Site = 'https://rc.wfirma.pl';
+global.Site = 'https://beta.wfirma.pl';
 
 //dane do logowania
 global.Login = 'bartek.lazarowicz+' + Math.floor(Math.random() * 1000001) + '@wfirma.pl';

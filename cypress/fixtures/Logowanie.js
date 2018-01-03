@@ -6,16 +6,19 @@ export const Logowanie = function () {
 
 //zaloguj sie
         cy.get('input#UserLogin')
-            .type(Login)
+            //.type(Login)
+            .type('bartek.lazarowicz+22@wfirma.pl')
             .get('input#UserPassword')
             .type(Password)
             .get('button.btn.btn-lg.btn-primary.btn-block.btn-submit')
             .click()
+            cy.visit(Site + '/user_companies/login/4414')
         //wyłączenie OneTimeInfo
-        cy.get('fieldset[id="one-time-info-modal"]').then(($acceptbtn) => {
+        /*cy.find('fieldset[id="one-time-info-modal"]').then(($acceptbtn) => {
                 if ($acceptbtn.find('a[id="accept"]')) {
                     cy.get('a[id="accept"]').click()
                 }
-         });
+            {}
+         });*/
 
 };
