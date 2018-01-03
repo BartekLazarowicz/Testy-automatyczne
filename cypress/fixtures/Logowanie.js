@@ -11,7 +11,11 @@ export const Logowanie = function () {
             .type(Password)
             .get('button.btn.btn-lg.btn-primary.btn-block.btn-submit')
             .click()
-            .get('a[id="accept"]')
-            .click()
+        //wyłączenie OneTimeInfo
+        cy.get('fieldset[id="one-time-info-modal"]').then(($acceptbtn) => {
+                if ($acceptbtn.find('a[id="accept"]')) {
+                    cy.get('a[id="accept"]').click()
+                }
+         });
 
 };

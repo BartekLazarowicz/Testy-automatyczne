@@ -2,7 +2,7 @@
 global.Site = 'https://rc.wfirma.pl';
 
 //dane do logowania
-global.Login = 'bartek.lazarowicz+' + Math.floor(Math.random() * 10001) + '@wfirma.pl';
+global.Login = 'bartek.lazarowicz+' + Math.floor(Math.random() * 1000001) + '@wfirma.pl';
 global.Password = '123123qwe';
 
 //dane przy rejestracji

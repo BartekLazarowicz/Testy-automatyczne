@@ -1,6 +1,6 @@
 export const Losowepozycje = function () {
 
-for (PositionIndex=0; PositionIndex < InvoiceContentCount; ) {
+for (let PositionIndex=0; PositionIndex < InvoiceContentCount; ) {
     let RandomNumb = (Math.floor(Math.random() * 10001)); //liczby losowe dla pozycji
     //uzupełnianie danych produktu
     cy.get('input[name="data[InvoiceContent][' + PositionIndex + '][name]"]')
