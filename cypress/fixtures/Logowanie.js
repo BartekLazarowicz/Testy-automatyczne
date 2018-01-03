@@ -3,6 +3,7 @@ export const Logowanie = function () {
 //wejdz na beta.wfirma.pl
         cy.visit(Site + '/users/login')
 
+
 //zaloguj sie
         cy.get('input#UserLogin')
             .type(Login)
