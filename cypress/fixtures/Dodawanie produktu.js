@@ -12,7 +12,7 @@ describe ('Produkt', function ()  {
             }
         });
         for (let GoodsIndex=0; GoodsIndex < GoodsCount; ) {
-            let RandomNumb = (Math.floor(Math.random() * 101)); //liczby losowe dla pozycji
+            let RandomNumb = (Math.floor(Math.random() * 101));
             cy.get('span.menu-label:first')
                 .click();
             cy.get('input[name="data[Good][name]"]')
