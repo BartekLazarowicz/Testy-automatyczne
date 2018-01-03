@@ -1,10 +1,8 @@
 import {Logowanie} from './Logowanie';
 
 describe ('Produkt', function ()  {
-
     it('Dodawanie', function () {
         Logowanie();
-
         cy.get('div.navbar.main-menu').then(($mainnavbar) => {
             if ($mainnavbar.find('li.warehouses')) {
                 cy.visit(Site + '/warehouses')
@@ -24,5 +22,6 @@ describe ('Produkt', function ()  {
             cy.get('div.dialogbox-content form')
                 .submit();
             GoodsIndex++;
-    }
-})});
+        }
+    };
+});

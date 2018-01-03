@@ -16,6 +16,6 @@ describe ('Sprzedaż', function ()  {
         Losowepozycje();
         //akceptacja formularza
         cy.get('div.dialogbox-content form')
-            .submit()
+            .submit();
     });
 });
